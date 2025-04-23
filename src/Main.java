@@ -1,4 +1,3 @@
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -111,29 +110,35 @@ public class Main {
                     } else {
                         System.out.println("El perro más viejo es: " + mayor);
                     }
+
+
+                }
+                case 7 -> {
+                    System.out.println("Saliendo...");
                 }
 
-                static Persona buscarPersona (String documento){
-                    for (Persona p : personas) {
-                        if (p.getDocumento().equalsIgnoreCase(documento)) {
-                            return p;
-                        }
-                    }
-                    return null;
-                }
 
-                static Perro buscarPerro (String placa){
-                    for (Perro p : perrosDisponibles) {
-                        if (p.getPlaca().equalsIgnoreCase(placa)) {
-                            return p;
-                        }
-                    }
-                    return null;
-                }
             }
-            case 7 -> {
-                System.out.println("Saliendo...");
+        }while (opcion != 8);
+    }
+
+    static Persona buscarPersona (String documento){
+        for (Persona p : personas) {
+            if (p.getDocumento().equalsIgnoreCase(documento)) {
+                return p;
             }
         }
+        return null;
     }
+
+    static Perro buscarPerro (String placa){
+        for (Perro p : perrosDisponibles) {
+            if (p.getPlaca().equalsIgnoreCase(placa)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+
 }
